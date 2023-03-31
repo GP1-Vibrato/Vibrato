@@ -1,0 +1,24 @@
+create database vibrato;
+use vibrato;
+
+CREATE TABLE ouvinte(
+	id_ouvinte int primary key auto_increment,
+	nome varchar(45),
+	senha varchar(45),
+	email varchar(45),
+	username varchar(45)
+);
+
+CREATE TABLE artista(
+	id_artista integer primary key auto_increment,
+    nome varchar(45),
+	senha varchar(45),
+	email varchar(45),
+	username varchar(45)
+);
+
+INSERT INTO artista(nome,senha,email,username)VALUES
+('nome', 'senha', 'email','usuario'),
+('nome', 'senha', 'email','usuario');
+
+select * from artista;

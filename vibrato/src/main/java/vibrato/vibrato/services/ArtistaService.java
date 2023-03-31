@@ -20,11 +20,10 @@ public class ArtistaService {
         return lista;
     }
 
-    public Artista addArtista(Artista novoOuvinte){
-        Artista artistaBanco = artistaRepository.save(novoOuvinte);
+    public Artista addArtista(Artista novoArtista){
+        Artista artistaBanco = artistaRepository.save(novoArtista);
         return artistaBanco;
     }
-
 
 
 }

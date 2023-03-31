@@ -3,26 +3,25 @@ package vibrato.vibrato.entidades;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "artistas")
+@Table(name ="artista")
 public class Artista {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idArtista")
-    private int idArtista;
+    private Integer idArtista;
 
-    @Column(name = "nome", length = 200, nullable = true)
+    @Column(name = "nome")
     private String nome;
 
-    @Column(name = "senha",columnDefinition = "TEXT",nullable = true)
+    @Column(name = "senha")
     private String senha;
 
-    @Column(name = "email", length = 50, nullable = true)
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "username", length = 200, nullable = true)
+    @Column(name = "username")
     private String username;
-
 
     public String getNome() {
         return nome;
@@ -65,11 +64,11 @@ public class Artista {
 
 
 
-    public int getIdArtista() {
+    public Integer getIdArtista() {
         return idArtista;
     }
 
-    public void setIdArtista(int idArtista) {
+    public void setIdArtista(Integer idArtista) {
         this.idArtista = idArtista;
     }
 

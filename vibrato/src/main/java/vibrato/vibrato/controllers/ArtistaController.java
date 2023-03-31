@@ -2,15 +2,16 @@ package vibrato.vibrato.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 import vibrato.vibrato.repositories.ArtistaRepository;
 import vibrato.vibrato.entidades.Artista;
 import vibrato.vibrato.services.ArtistaService;
 
 import java.util.List;
 
+@RestController
+@CrossOrigin("*")
+@RequestMapping("/artistas")
 public class ArtistaController {
 
     private ArtistaService artistaService;
