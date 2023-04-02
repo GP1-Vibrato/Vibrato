@@ -11,7 +11,7 @@ public class Ouvinte {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idOuvinte")
-    private Integer idOuvinte;
+    private Long idOuvinte;
     @Column(name = "nome")
     private String nome;
 
@@ -24,6 +24,12 @@ public class Ouvinte {
     private String email;
     @Column(name = "username")
     private String username;
+
+    private Boolean isLogado;
+
+    public Boolean getLogado() { return isLogado;}
+
+    public void setLogado(Boolean logado) { isLogado = logado;}
 
     public String getNome() {
         return nome;
@@ -57,11 +63,11 @@ public class Ouvinte {
         this.username = username;
     }
 
-    public Integer getIdOuvinte() {
+    public Long getIdOuvinte() {
         return idOuvinte;
     }
 
-    public void setIdOuvinte(Integer idOuvinte) {
+    public void setIdOuvinte(Long idOuvinte) {
         this.idOuvinte = idOuvinte;
     }
 

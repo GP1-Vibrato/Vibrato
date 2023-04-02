@@ -45,4 +45,14 @@ public class OuvinteController {
         }
         return ResponseEntity.status(404).build();
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> logoff(@PathVariable Long id){
+        if (id < ouvinteService.listarOuvinte().size() && id > 0){
+            Ouvinte o = ouvinteService.getById(id);
+            o.setLogado(false);
+            return ResponseEntity.status(200).build();
+        }
+        return ResponseEntity.status(404).build();
+    }
 }

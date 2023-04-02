@@ -20,6 +20,11 @@ public List<Ouvinte> listarOuvinte(){
     return lista;
 }
 
+public Ouvinte getById(Long id){
+    Ouvinte ouvinteBanco = ouvinteRepository.getById(id);
+    return ouvinteBanco;
+}
+
 public Ouvinte addOuvinte(Ouvinte novoOuvinte){
     Ouvinte ouvinteBanco = ouvinteRepository.save(novoOuvinte);
     return ouvinteBanco;
