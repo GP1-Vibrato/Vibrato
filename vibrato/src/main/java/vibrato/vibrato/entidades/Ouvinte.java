@@ -1,6 +1,8 @@
 package vibrato.vibrato.entidades;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "ouvinte")
@@ -12,8 +14,12 @@ public class Ouvinte {
     private Integer idOuvinte;
     @Column(name = "nome")
     private String nome;
+
+    @NotBlank
     @Column(name = "senha")
     private String senha;
+    @Email
+    @NotBlank
     @Column(name = "email")
     private String email;
     @Column(name = "username")
