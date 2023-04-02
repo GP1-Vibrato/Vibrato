@@ -20,12 +20,12 @@ public class OuvinteController {
         this.ouvinteService = ouvinteService;
     }
 
-    @PostMapping
+    @PostMapping("/ouvinte")
     public ResponseEntity<Ouvinte> criarOuvinte(@RequestBody Ouvinte novoOuvinte){
         return ResponseEntity.status(201).body(ouvinteService.addOuvinte(novoOuvinte));
     }
 
-    @GetMapping
+    @GetMapping("/ouvinte")
     public ResponseEntity<List<Ouvinte>> listar() {
         List<Ouvinte> ouvintes = ouvinteService.listarOuvinte();
         if (ouvintes.isEmpty()) {
@@ -46,7 +46,7 @@ public class OuvinteController {
         return ResponseEntity.status(404).build();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}/ouvinte")
     public ResponseEntity<Void> logoff(@PathVariable Long id){
         if (id < ouvinteService.listarOuvinte().size() && id > 0){
             Ouvinte o = ouvinteService.getById(id);

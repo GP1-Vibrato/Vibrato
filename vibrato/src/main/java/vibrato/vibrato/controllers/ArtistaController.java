@@ -26,7 +26,7 @@ public class ArtistaController {
         return ResponseEntity.status(201).body(artistaService.addArtista(novoArtista));
     }
 
-    @GetMapping
+    @GetMapping("/artista")
     public ResponseEntity<List<Artista>> listar() {
         List<Artista> artistas = artistaService.listarArtista();
 
@@ -37,7 +37,7 @@ public class ArtistaController {
         return ResponseEntity.status(200).body(artistaService.listarArtista());
     }
     
-    @GetMapping("/login")
+    @GetMapping("/login/artista")
     public ResponseEntity<Artista> login(@RequestBody @Valid Artista loginArtista){
         List<Artista> artistas = artistaService.listarArtista();
         for (Artista a: artistas){
@@ -49,7 +49,7 @@ public class ArtistaController {
         return ResponseEntity.status(404).build();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}/artista")
         public ResponseEntity<Void> logoff(@PathVariable Long id){
         if (id < artistaService.listarArtista().size() && id > 0){
             Artista a = artistaService.getById(id);
