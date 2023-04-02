@@ -1,6 +1,7 @@
 package vibrato.vibrato.services;
 
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import vibrato.vibrato.entidades.Artista;
 import vibrato.vibrato.repositories.ArtistaRepository;
@@ -25,5 +26,14 @@ public class ArtistaService {
         return artistaBanco;
     }
 
+    public Artista getLogin(Artista loginArtista){
+        List<Artista> loginLista = artistaRepository.findAll();
+        for (Artista a: loginLista) {
+            if (a.getEmail().equals(loginArtista.getEmail())){
+                return a;
+            }
+        }
+        return null;
+    }
 
 }

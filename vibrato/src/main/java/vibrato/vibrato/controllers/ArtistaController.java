@@ -41,7 +41,7 @@ public class ArtistaController {
         List<Artista> artistas = artistaService.listarArtista();
         for (Artista a: artistas){
             if (a.getEmail().equals(loginArtista.getEmail()) && a.getSenha().equals(loginArtista.getSenha())){
-                return ResponseEntity.status(202).build();
+                return ResponseEntity.status(202).body(artistaService.getLogin(loginArtista));
             }
         }
         return ResponseEntity.status(404).build();
