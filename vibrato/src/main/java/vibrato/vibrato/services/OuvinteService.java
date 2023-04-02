@@ -1,6 +1,7 @@
 package vibrato.vibrato.services;
 
 import org.springframework.stereotype.Service;
+import vibrato.vibrato.entidades.Artista;
 import vibrato.vibrato.entidades.Ouvinte;
 import vibrato.vibrato.repositories.OuvinteRepository;
 
@@ -24,4 +25,13 @@ public Ouvinte addOuvinte(Ouvinte novoOuvinte){
     return ouvinteBanco;
 }
 
+    public Ouvinte getLogin(Ouvinte loginOuvinte){
+        List<Ouvinte> loginLista = ouvinteRepository.findAll();
+        for (Ouvinte o: loginLista) {
+            if (o.getEmail().equals(loginOuvinte.getEmail())){
+                return o;
+            }
+        }
+        return null;
+    }
 }
