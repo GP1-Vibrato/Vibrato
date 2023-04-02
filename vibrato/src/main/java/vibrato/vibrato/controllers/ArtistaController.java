@@ -51,7 +51,7 @@ public class ArtistaController {
 
     @PutMapping("/{id}/artista")
         public ResponseEntity<Void> logoff(@PathVariable Long id){
-        if (id < artistaService.listarArtista().size() && id > 0){
+        if (id <= artistaService.listarArtista().size() && id > 0){
             Artista a = artistaService.getById(id);
             a.setLogado(false);
             return ResponseEntity.status(200).build();

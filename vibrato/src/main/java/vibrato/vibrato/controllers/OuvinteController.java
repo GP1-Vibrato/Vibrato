@@ -40,6 +40,7 @@ public class OuvinteController {
         List<Ouvinte> ouvintes = ouvinteService.listarOuvinte();
         for (Ouvinte o: ouvintes){
             if (o.getEmail().equals(loginOuvinte.getEmail()) && o.getSenha().equals(loginOuvinte.getSenha())){
+                o.setLogado(true);
                 return ResponseEntity.status(202).body(ouvinteService.getLogin(loginOuvinte));
             }
         }
@@ -48,7 +49,7 @@ public class OuvinteController {
 
     @PutMapping("/{id}/ouvinte")
     public ResponseEntity<Void> logoff(@PathVariable Long id){
-        if (id < ouvinteService.listarOuvinte().size() && id > 0){
+        if (id <= ouvinteService.listarOuvinte().size() && id > 0){
             Ouvinte o = ouvinteService.getById(id);
             o.setLogado(false);
             return ResponseEntity.status(200).build();
