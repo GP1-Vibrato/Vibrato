@@ -11,7 +11,7 @@ public class Artista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idArtista")
-    private Integer idArtista;
+    private Long idArtista;
 
     @Column(name = "nome")
     private String nome;
@@ -27,6 +27,16 @@ public class Artista {
 
     @Column(name = "username")
     private String username;
+
+    private Boolean isLogado;
+
+    public void setLogado(Boolean logado) {
+        isLogado = logado;
+    }
+
+    public Boolean getLogado() {
+        return isLogado;
+    }
 
     public String getNome() {
         return nome;
@@ -69,11 +79,11 @@ public class Artista {
 
 
 
-    public Integer getIdArtista() {
+    public Long getIdArtista() {
         return idArtista;
     }
 
-    public void setIdArtista(Integer idArtista) {
+    public void setIdArtista(Long idArtista) {
         this.idArtista = idArtista;
     }
 

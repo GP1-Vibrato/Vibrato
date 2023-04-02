@@ -21,6 +21,11 @@ public class ArtistaService {
         return lista;
     }
 
+    public Artista getById(Long id){
+        Artista artistaBanco = artistaRepository.getById(id);
+        return artistaBanco;
+    }
+
     public Artista addArtista(Artista novoArtista){
         Artista artistaBanco = artistaRepository.save(novoArtista);
         return artistaBanco;

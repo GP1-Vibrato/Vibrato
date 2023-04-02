@@ -35,7 +35,7 @@ public class OuvinteController {
         return ResponseEntity.status(200).body(ouvinteService.listarOuvinte());
     }
 
-    @GetMapping
+    @GetMapping("/login/ouvinte")
     public ResponseEntity<Ouvinte> login(@RequestBody Ouvinte loginOuvinte){
         List<Ouvinte> ouvintes = ouvinteService.listarOuvinte();
         for (Ouvinte o: ouvintes){

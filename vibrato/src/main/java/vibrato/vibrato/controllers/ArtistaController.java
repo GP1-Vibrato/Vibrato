@@ -7,6 +7,7 @@ import vibrato.vibrato.repositories.ArtistaRepository;
 import vibrato.vibrato.entidades.Artista;
 import vibrato.vibrato.services.ArtistaService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -36,15 +37,27 @@ public class ArtistaController {
         return ResponseEntity.status(200).body(artistaService.listarArtista());
     }
     
-    @GetMapping
-    public ResponseEntity<Artista> login(@RequestBody Artista loginArtista){
+    @GetMapping("/login")
+    public ResponseEntity<Artista> login(@RequestBody @Valid Artista loginArtista){
         List<Artista> artistas = artistaService.listarArtista();
         for (Artista a: artistas){
             if (a.getEmail().equals(loginArtista.getEmail()) && a.getSenha().equals(loginArtista.getSenha())){
+                a.setLogado(true);
                 return ResponseEntity.status(202).body(artistaService.getLogin(loginArtista));
             }
         }
         return ResponseEntity.status(404).build();
     }
 
-}
+    @PutMapping("/{id}")
+        public ResponseEntity<Void> logoff(@PathVariable Long id){
+        if (id < artistaService.listarArtista().size() && id > 0){
+            Artista a = artistaService.getById(id);
+            a.setLogado(false);
+            return ResponseEntity.status(200).build();
+        }
+        return ResponseEntity.status(404).build();
+        }
+    }
+
+
