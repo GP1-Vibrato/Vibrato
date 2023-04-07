@@ -91,7 +91,7 @@ p{
 
 .row3{
 
-	margin-bottom: 25px;
+	margin-top: 10px;
 }
 .row-pai{
 	display: flex;
@@ -107,6 +107,7 @@ p{
 }
 .row5{
 	margin-left: 100px;
+	margin-top: 40px;
 }
 
 
@@ -115,7 +116,11 @@ nav{
 	margin-right: 45px;
 }
 
+.other-link{
+font-size: 19px;
+margin-top:20px;
 
+}
 .cadastron{
 margin-top: 100px;
 	color: #ffffff;
@@ -167,7 +172,8 @@ cursor: pointer;
 	}
 	.row4{
 		margin-left: 45px;
-	}
+		margin-top: 30px;
+		}
 	.inputs,h1, form{
 		display: flex;
 		align-items: center;

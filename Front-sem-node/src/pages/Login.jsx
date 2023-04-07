@@ -39,14 +39,14 @@ function Home(props) {
         <div>
             <Navbar />
 
-            <h1 className="Login">ENTRAR</h1>
+            <h1 className="Login">Iniciar Sessão</h1>
 
             <form>
                 {inputFields.map((input, index) => {
                     return (
                         <div className="inputs" key={index}>
                             <div className="pai-login">
-                                <p className="login-user">Username
+                                <p className="login-user">E-mail
                                     <input type="text" name="username" id="username-login" onChange={event => handleFormChange(index, event)} />
                                 </p>
                                 <p className="login-senha">Senha

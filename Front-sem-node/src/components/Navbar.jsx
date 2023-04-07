@@ -34,6 +34,7 @@ function Navbar() {
 				<button className="cadastrar">Cadastrar</button>
 				</a>
 			
+			
 			</nav>
 
 			
@@ -43,6 +44,7 @@ function Navbar() {
 				onClick={showNavbar}>
 				<FaBars />
 			</button>
+		
 		</div>
 
 );

@@ -41,8 +41,7 @@ function Home(props) {
         <div>
             <Navbar />
             
-            <h1 className="cadastron">CADASTRO</h1>
-            <h1 className="cadastron2">ARTISTA</h1>
+            <h1 className="cadastron">Registrar com o e-mail</h1>
 
             <form>
                 {inputFields.map((input, index) => {
@@ -63,10 +62,16 @@ function Home(props) {
                                 <p className="row4">Senha
                                     <input type="password" name="senha"  id="senha" onChange={event => handleFormChange(index, event)} />
                                 </p>
+                               
                                 <p className="row5">Confirmar Senha
                                 <input type="password" name="email"  id="senha2" onChange={event => handleFormChange(index, event)} />
+                                
+                                <p className="other-link">É um artista ou produtora? Registre-se clicando AQUI</p>
+
                                 </p>
+                            
                             </div>
+
                         </div>
                     )
                 })}
