@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato+Web:wght@400;700&display=swap");
+
+  
+  *::-webkit-scrollbar {
+	width: 5px;
+	height: 2px;
+  }
+  
+  *::-webkit-scrollbar-track {
+	background: #160031;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+	background-color: #160031;
+	border-radius: 30px;
+	border: 5px solid #ffffff6c;
+  }
+body{
+	background-image: url(20230405_122105.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	 overflow-x: hidden;
+
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+}
+
+:root {
+	--mainColor: #100122;
+	--mainColorLight: #1B003C;
+	--secondaryColor: #db2b39;
+	--textColor: #eee;
+
+}
+h3{
+font-size: 31px;
+margin: 0 5rem;
+
+}
+.btncad-login{
+
+	width: 250px;
+	height: 52px;
+	border-radius: 15px;
+	background: linear-gradient(270deg,#ce03ff,#667de1);
+	color: #eee;
+	border: #100122;
+	font-family: 'Lato', sans-serif;
+	font-size: 24px;
+	cursor: pointer;
+	margin-top: 50px;
+}
+
+p{
+	color: #eee;
+	font-size: 25px;
+}
+
+input{
+    width: 450px;
+    height: 60px;
+    margin-top: 25px;
+	border-radius: 10px;
+    outline: none;
+	border: 0;
+	font-size: 30px;    
+}
+
+	
+ h1, form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+	font-size: 45px;
+}
+
+.pai-login{
+display: flex;
+flex-direction: column;
+gap: 65px;
+}
+
+#username-login{
+	width: 600px;
+}
+#email-login{
+	width: 600px;
+}
+
+
+
+p{
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+
+
+.Login{
+color: #ffffff;
+margin-bottom: 60px;
+margin-top: 100px;
+}
+.cadastron2{
+	color: #ffffff;
+	font-size: 25px;
+	}
+	
+.pai .nav-btn {
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+
+}
+.pai header div,
+nav {
+	display: flex;
+	align-items: center;
+	
+}
+.cadastrar{
+width: 100px;
+height: 42px;
+border-radius: 15px;
+background: linear-gradient(270deg,#ce03ff,#667de1);
+color: #eee;
+border: #100122;
+font-family: 'Lato', sans-serif;
+font-size: 17px;
+cursor: pointer;
+
+}
+
+@media only screen and (max-width: 1001px) {
+	.pai .nav-btn {
+		visibility: visible;
+		opacity: 1;
+		position: absolute;
+		margin-top: -49px;
+		margin-left: 25px;
+	}
+	body{
+		background-image: url(20230405_122105.gif);
+		background-repeat: no-repeat;
+		background-size:cover;
+		background-attachment: fixed;
+	
+	}
+	#email{
+		width: 450px;
+	}
+	.row4{
+		margin-left: 45px;
+	}
+	.inputs,h1, form{
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 20px;
+		font-size: 45px;
+	}
+	.inputs{
+		width: 300px;
+
+	}
+	.row-pai{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
+		width: 600px;
+	}
+	.row5{
+		margin-top: 30px;
+		margin-left: 50px;
+	}
+	.row2{
+		margin-right: 100px;
+	}
+	
+	input{
+		width: 450px;
+
+	}
+	.row-pai2{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: -15px;
+	}
+
+	.pai header nav {
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-color:rgba(0, 0, 0, 0.9);
+		transition: 1s;
+	}
+
+	.pai{
+		justify-content: space-between;
+
+	}
+
+	.pai header .responsive_nav {
+		transform: translateY(100vh);
+	}
+
+
+
+	nav a {
+		font-size: 2.5rem;
+		margin: 10px 10px 75px 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	
+	}
+
+	nav .login{
+		top: 100vh;
+		margin: 0px 0px 0px 0px;
+
+	}
+
+	.cadastrar{
+		width: 350px;
+		height: 59px;
+		border-radius: 22px;
+		background: linear-gradient(270deg,#ce03ff,#667de1);
+		color: #eee;
+		border: #100122;
+		font-family: 'Lato', sans-serif;
+		font-size: 25px;
+		cursor: pointer;
+		margin-top: 75px;
+		
+		}
+	
+}
+@media only screen and (max-width: 610px) {
+	.pai-login {
+	width: 400px;
+	}
+	#username-login{
+		width: 400px;
+	}
+	#email-login{
+		width: 400px;
+	}
+	
+}

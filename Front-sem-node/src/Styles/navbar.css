@@ -1,0 +1,168 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+}
+
+:root {
+	--mainColor: #100122;
+	--mainColorLight: #1B003C;
+	--secondaryColor: #db2b39;
+	--textColor: #eee;
+
+}
+h3{
+font-size: 31px;
+margin: 0 5rem;
+
+}
+.btncad{
+
+	width: 250px;
+	height: 52px;
+	border-radius: 15px;
+	background: linear-gradient(270deg,#ce03ff,#667de1);
+	color: #eee;
+	border: #100122;
+	font-family: 'Lato', sans-serif;
+	font-size: 24px;
+	cursor: pointer;
+	margin-top: 50px;
+}
+
+.pai header {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	width: 100vw;
+	height: 73px;
+	background-color: var(--mainColor);
+	color: var(--textColor);
+	box-shadow: 0px 20px 50px 20px rgba(0, 0, 0, 0.5);
+	justify-content: space-between;
+	
+}
+
+nav{
+	margin-right: 45px;
+}
+
+
+
+nav a {
+	margin: 0 1.1rem;
+	color: var(--textColor);
+	text-decoration: none;
+	font-size: 20px;
+	margin-top: 2px;
+}
+.pai .nav-btn {
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+
+}
+.pai header div,
+nav {
+	display: flex;
+	align-items: center;
+	
+}
+.cadastrar{
+width: 100px;
+height: 42px;
+border-radius: 15px;
+background: linear-gradient(270deg,#ce03ff,#667de1);
+color: #eee;
+border: #100122;
+font-family: 'Lato', sans-serif;
+font-size: 17px;
+cursor: pointer;
+
+}
+
+@media only screen and (max-width: 1001px) {
+	.pai header {
+		position: initial;
+		display: flex;
+		align-items: center;
+		width: 100vw;
+		height: 73px;
+		background-color: var(--mainColor);
+		color: var(--textColor);
+		box-shadow: 0px 20px 50px 20px rgba(0, 0, 0, 0.5);
+		justify-content: space-between;
+		
+	}
+	.pai .nav-btn {
+		visibility: visible;
+		opacity: 1;
+		position: absolute;
+		margin-top: -49px;
+		margin-left: 25px;
+	}
+
+
+	.pai header nav {
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-color:rgba(0, 0, 0, 0.9);
+		transition: 1s;
+	}
+
+	.pai{
+		justify-content: space-between;
+
+	}
+
+	.pai header .responsive_nav {
+		transform: translateY(100vh);
+	}
+
+
+
+	nav a {
+		font-size: 2.5rem;
+		margin: 10px 10px 75px 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	
+	}
+
+	nav .login{
+		top: 100vh;
+		margin: 0px 0px 0px 0px;
+
+	}
+
+	.cadastrar{
+		width: 350px;
+		height: 59px;
+		border-radius: 22px;
+		background: linear-gradient(270deg,#ce03ff,#667de1);
+		color: #eee;
+		border: #100122;
+		font-family: 'Lato', sans-serif;
+		font-size: 25px;
+		cursor: pointer;
+		margin-top: 75px;
+		
+		}
+	
+			
+}
