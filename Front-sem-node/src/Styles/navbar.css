@@ -17,6 +17,10 @@ font-size: 31px;
 margin: 0 5rem;
 
 }
+.logoimg{
+cursor: pointer;
+margin-bottom: 7px;
+}
 .btncad{
 
 	width: 250px;
@@ -88,6 +92,10 @@ cursor: pointer;
 }
 
 @media only screen and (max-width: 1001px) {
+	.logoimg{
+		cursor: pointer;
+		margin-left: 40px;
+		}
 	.pai header {
 		position: initial;
 		display: flex;

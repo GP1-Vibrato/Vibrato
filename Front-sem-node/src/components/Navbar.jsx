@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../Styles/navbar.css";
+import logovib1 from "../Styles/logovib1.png";
 
 function Navbar() {
 	const navRef = useRef();
@@ -14,8 +15,9 @@ function Navbar() {
 	return (
 		<div className="pai">
 			<header>
-			<h3>Vibrato</h3>
-
+			<div>
+				<img className="logoimg" src={logovib1} alt="" width={180} height={180}/>
+			</div>
 			<nav ref={navRef}>
 
 				<a className="a" href="/#">Home</a>

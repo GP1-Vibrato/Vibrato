@@ -88,6 +88,9 @@ p{
 	margin-bottom: 25px;
 
 }
+.row4{
+	margin-top: 40px;
+}
 
 .row3{
 
@@ -117,10 +120,11 @@ nav{
 }
 
 .other-link{
-font-size: 17px;
-margin-top:20px;
+font-size: 25px;
+margin-top:50px;
 display: flex;
 flex-direction: row;
+margin-left: 360px;
 
 }
 .Checkbox{
@@ -158,6 +162,10 @@ cursor: pointer;
 		background-size:cover;
 		background-attachment: fixed;
 	
+	}
+	.other-link{
+		margin-left: 140px;
+		
 	}
 	.pai header nav {
 		position: fixed;
@@ -316,6 +324,7 @@ cursor: pointer;
 		margin-top: 75px;
 		
 		}
+		
 		
 		
 }

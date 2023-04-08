@@ -1,0 +1,161 @@
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 175px;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  width: 490px;
+  height: 60px;
+  border-radius: 10px;
+  outline: none;
+  border: 0;
+  font-size: 30px;
+}
+
+.dropdown:hover {
+  background-color: #ffffff;
+
+}
+
+.dropdown-icon {
+  margin-left: 10px;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.dropdown.open .dropdown-icon {
+  transform: rotate(180deg);
+  transition: 1s;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-left: 250px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 0;
+
+}
+
+.dropdown-options>div {
+  padding: 10px 20px;
+  font-size: 25px;
+  color: #000000;
+  cursor: pointer;
+  background: #ffffff;
+  transition: all 0.5s;
+  border: 0;
+}
+.dropdown-options .ops{
+  width: 490px;
+}
+
+.dropdown-options>div:hover {
+  background: linear-gradient(270deg,#cd03ff,#667ce1);
+  color: #fcf5f5;
+  transition: all 0.5s;
+
+}
+
+
+
+
+
+
+.dropdown{
+  margin-left: 250px;
+  margin-top: 50px;
+}
+
+@media only screen and (max-width: 1001px) {
+
+
+  .dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 160px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    width: 470px;
+    height: 60px;
+    border-radius: 10px;
+    outline: none;
+    border: 0;
+    font-size: 30px;
+  }
+  
+  .dropdown:hover {
+    background-color: #ffffff;
+  }
+  
+  .dropdown-icon {
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 1;
+  }
+  
+  .dropdown.open .dropdown-icon {
+    transform: rotate(180deg);
+  }
+  
+  .dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-left: 50px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ffffff;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 10px;
+  
+  }
+  .dropdown-options .ops{
+    width: 470px;
+  }
+  .dropdown-options>div {
+    padding: 10px 20px;
+    font-size: 25px;
+    color: #000000;
+    cursor: pointer;
+  }
+  
+  .dropdown-options>div:hover {
+    background-color: #f8f8f8;
+  }
+  .dropdown{
+    margin-left: 50px;
+    margin-top: 50px;
+
+  }
+
+
+}

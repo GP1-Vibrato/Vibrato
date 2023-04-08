@@ -4,7 +4,8 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from 'react';
 import Navbar from "../components/Navbar";
 import FooterCL from "../components/FooterCL";
-import Checkboxx from "../components/Checkboxx";
+import Dropdown from "../components/Dropdown";
+
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
@@ -17,34 +18,22 @@ function Home(props) {
         data[index][event.target.name] = event.target.value;
         setInputFields(data);
     }
-    const [isChecked, setIsChecked] = useState(false);
 
-    const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
+    const options = [
+        { label: "Ouvinte", value: "1" },
+        { label: "Artista", value: "2" },
+        { label: "Produtora", value: "3" },
+    ];
+
+    const [selectedValue, setSelectedValue] = useState(options[0].value);
+
+    const handleOptionSelect = (value) => {
+        setSelectedValue(value);
     };
+    
 
     const submit = (e) => {
-        if (isChecked) {
-            e.preventDefault();
-            fetch("http://localhost:8080/artistas",
-                {
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    method: "POST",
-                    body: JSON.stringify({
-                        nome: nome.value,
-                        senha: senha.value,
-                        email: email.value,
-                        username: username.value
-    
-                    })
-                })
-                .then(function (res) { console.log(res) })
-                .catch(function (res) { console.log(res) })
-        }
-        else{
+        if (selectedValue== 1) {
             e.preventDefault();
             fetch("http://localhost:8080/ouvintes",
                 {
@@ -58,14 +47,38 @@ function Home(props) {
                         senha: senha.value,
                         email: email.value,
                         username: username.value
-    
+
                     })
                 })
                 .then(function (res) { console.log(res) })
                 .catch(function (res) { console.log(res) })
 
+
+        }
+
+        if (selectedValue == 2) {
+            e.preventDefault();
+            fetch("http://localhost:8080/artistas",
+                {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    method: "POST",
+                    body: JSON.stringify({
+                        nome: nome.value,
+                        senha: senha.value,
+                        email: email.value,
+                        username: username.value
+
+                    })
+                })
+                .then(function (res) { console.log(res) })
+                .catch(function (res) { console.log(res) })
         }
     }
+
+
 
     return (
         <div>
@@ -96,17 +109,17 @@ function Home(props) {
                                 <p className="row5">Confirmar Senha
                                     <input type="password" name="email" id="senha2" onChange={event => handleFormChange(index, event)} />
 
-                                    <p className="other-link">Selecione está opção se for um artista ou produtora
-                                    <Checkboxx
-                                        checked={isChecked}
-                                        onChange={handleCheckboxChange}/>
-                                    </p>
-
 
                                 </p>
 
                             </div>
+                            <div>
+                                <p className="other-link">Selecione o tipo de usuário
 
+                                </p>
+                                <Dropdown options={options} onSelect={handleOptionSelect} />
+
+                            </div>
                         </div>
                     )
                 })}
