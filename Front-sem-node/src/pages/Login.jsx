@@ -47,10 +47,11 @@ function Home(props) {
                         <div className="inputs" key={index}>
                             <div className="pai-login">
                                 <p className="login-user">E-mail
-                                    <input type="text" name="username" id="username-login" onChange={event => handleFormChange(index, event)} />
+                                    <input type="text" name="email" id="email-login" onChange={event => handleFormChange(index, event)} />
                                 </p>
                                 <p className="login-senha">Senha
-                                    <input type="text" name="nosei" id="email-login" onChange={event => handleFormChange(index, event)} />
+                                    <input type="text" name="nosei" id="senha-login" onChange={event => handleFormChange(index, event)} />
+                                    <p className="other-link2">Não tem uma conta? Resgistre-se AQUI</p>
 
                                 </p>
                             </div>

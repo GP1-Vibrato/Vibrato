@@ -1,6 +1,30 @@
 .footercl{
 background-color: #160031;
-width: 100vw;
-height: 100px;
+width: 100%;
+height: 150px;
 margin-top: 150px;
+bottom: 0;
+
+}
+
+@media only screen and (min-width: 2100px) {
+    .footercl{
+        background-color: #160031;
+        width: 100%;
+        height: 150px;
+        margin-top: 150px;
+        bottom: 0;
+        position: absolute;
+        }
+}
+
+@media only screen and (min-height: 1000px) {
+    .footercl{
+        background-color: #160031;
+        width: 100%;
+        height: 150px;
+        margin-top: 150px;
+        bottom: 0;
+        position: absolute;
+        }
 }

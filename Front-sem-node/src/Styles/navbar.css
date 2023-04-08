@@ -99,7 +99,7 @@ cursor: pointer;
 		box-shadow: 0px 20px 50px 20px rgba(0, 0, 0, 0.5);
 		justify-content: space-between;
 		
-	}
+	} 
 	.pai .nav-btn {
 		visibility: visible;
 		opacity: 1;
@@ -165,4 +165,4 @@ cursor: pointer;
 		}
 	
 			
-}
+} 
