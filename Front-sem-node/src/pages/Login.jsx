@@ -51,7 +51,7 @@ function Home(props) {
                                 </p>
                                 <p className="login-senha">Senha
                                     <input type="text" name="nosei" id="senha-login" onChange={event => handleFormChange(index, event)} />
-                                    <p className="other-link2">Não tem uma conta? Resgistre-se AQUI</p>
+                                    <a className="deco-login" href="/cadastro"><p className="other-link2">Resgistre-se agora</p></a>
 
                                 </p>
                             </div>

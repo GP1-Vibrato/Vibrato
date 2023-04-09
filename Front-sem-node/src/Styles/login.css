@@ -94,9 +94,9 @@ gap: 65px;
 }
 
 .other-link2{
-	font-size: 20px;
+	font-size: 19px;
 	margin-top: 15px;
-	margin-left:240px ;
+	margin-left:440px ;
 }
 
 p{
@@ -104,6 +104,9 @@ p{
 	flex-direction: column;
 }
 
+.deco-login{
+	text-decoration: none;
+}
 
 
 
@@ -243,7 +246,8 @@ cursor: pointer;
 		.other-link2{
 			font-size: 20px;
 			margin-top: 15px;
-			margin-left:240px ;
+			margin-left:430px;
+			
 		}
 		
 }
@@ -260,6 +264,6 @@ cursor: pointer;
 	.other-link2{
 			font-size: 20px;
 			margin-top: 15px;
-			margin-left:240px ;
+			margin-left:230px ;
 		}
 }
