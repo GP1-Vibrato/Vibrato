@@ -1,13 +1,13 @@
 package vibrato.vibrato.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import vibrato.vibrato.repositories.ArtistaRepository;
 import vibrato.vibrato.entidades.Artista;
 import vibrato.vibrato.services.ArtistaService;
+import vibrato.vibrato.services.autenticacao.dto.ArtistaLoginDto;
+import vibrato.vibrato.services.autenticacao.dto.ArtistaTokenDto;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -38,8 +38,12 @@ public class ArtistaController {
     }
     
     @GetMapping("/login/artista")
-    public ResponseEntity<Artista> login(@RequestBody @Valid Artista loginArtista){
+    public ResponseEntity<ArtistaTokenDto> login(@RequestBody @Valid ArtistaLoginDto artistaLoginDto){
+        ArtistaTokenDto artistaTokenDto = this.artistaService.autenticarArtista(artistaLoginDto);
+        return ResponseEntity.status(200).body(artistaTokenDto);
+        /*
         List<Artista> artistas = artistaService.listarArtista();
+
         for (Artista a: artistas){
             if (a.getEmail().equals(loginArtista.getEmail()) && a.getSenha().equals(loginArtista.getSenha())){
                 a.setLogado(true);
@@ -47,6 +51,8 @@ public class ArtistaController {
             }
         }
         return ResponseEntity.status(404).build();
+        */
+
     }
 
     @PutMapping("/{id}/artista")

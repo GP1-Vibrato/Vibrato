@@ -1,17 +1,51 @@
 package vibrato.vibrato.services;
 
 
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+import vibrato.vibrato.configuration.security.jwt.GerenciadorTokenJwt;
 import vibrato.vibrato.entidades.Artista;
-import vibrato.vibrato.repositories.ArtistaRepository;
+import vibrato.vibrato.entidades.repositories.ArtistaRepository;
+import vibrato.vibrato.services.autenticacao.ArtistaAutenticacaoService;
+import vibrato.vibrato.services.autenticacao.dto.ArtistaLoginDto;
+import vibrato.vibrato.services.autenticacao.dto.ArtistaTokenDto;
 
 import java.util.List;
 
 @Service
 public class ArtistaService {
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+    @Autowired
     private ArtistaRepository artistaRepository;
+
+    @Autowired
+    private GerenciadorTokenJwt gerenciadorTokenJwt;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+
+    public ArtistaTokenDto autenticarArtista(ArtistaLoginDto artistaLoginDto){
+        final UsernamePasswordAuthenticationToken credentials = new UsernamePasswordAuthenticationToken(
+                artistaLoginDto.getEmail(), artistaLoginDto.getSenha());
+        final Authentication authentication = this.authenticationManager.authenticate(credentials);
+
+        Artista artistaAutenticado = artistaRepository.findByEmail(artistaLoginDto.getEmail())
+                .orElseThrow(
+                        () -> new ResponseStatusException(404, "Email de usuário não cadastrado", null)
+                );
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        final String token = gerenciadorTokenJwt.generateToken(authentication);
+        return ArtistaAutenticacaoService.of(artistaAutenticado, token);
+    }
 
     public ArtistaService(ArtistaRepository artistaRepository){
         this.artistaRepository = artistaRepository;
@@ -27,7 +61,12 @@ public class ArtistaService {
     }
 
     public Artista addArtista(Artista novoArtista){
+
+        String senhaCriptografada = passwordEncoder.encode(novoArtista.getSenha());
+        novoArtista.setSenha(senhaCriptografada);
+
         Artista artistaBanco = artistaRepository.save(novoArtista);
+
         return artistaBanco;
     }
 

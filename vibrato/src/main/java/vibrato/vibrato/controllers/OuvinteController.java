@@ -1,12 +1,11 @@
 package vibrato.vibrato.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import vibrato.vibrato.entidades.Artista;
-import vibrato.vibrato.repositories.OuvinteRepository;
 import vibrato.vibrato.entidades.Ouvinte;
 import vibrato.vibrato.services.OuvinteService;
+import vibrato.vibrato.services.autenticacao.dto.OuvinteLoginDto;
+import vibrato.vibrato.services.autenticacao.dto.OuvinteTokenDto;
 
 import java.util.List;
 
@@ -36,15 +35,20 @@ public class OuvinteController {
     }
 
     @GetMapping("/login/ouvinte")
-    public ResponseEntity<Ouvinte> login(@RequestBody Ouvinte loginOuvinte){
-        List<Ouvinte> ouvintes = ouvinteService.listarOuvinte();
-        for (Ouvinte o: ouvintes){
+    public ResponseEntity<OuvinteTokenDto> login(@RequestBody OuvinteLoginDto ouvinteLoginDto){
+        OuvinteTokenDto ouvinteToken = this.ouvinteService.autenticarOuvinte(ouvinteLoginDto);
+        return ResponseEntity.status(200).body(ouvinteToken);
+        /*
+         List<Ouvinte> ouvintes = ouvinteService.listarOuvinte();
+
+         for (Ouvinte o: ouvintes){
             if (o.getEmail().equals(loginOuvinte.getEmail()) && o.getSenha().equals(loginOuvinte.getSenha())){
                 o.setLogado(true);
                 return ResponseEntity.status(202).body(ouvinteService.getLogin(loginOuvinte));
             }
         }
         return ResponseEntity.status(404).build();
+        */
     }
 
     @PutMapping("/{id}/ouvinte")
