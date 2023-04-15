@@ -1,4 +1,4 @@
-package vibrato.vibrato.services.autenticacao.dto;
+package vibrato.vibrato.services.dto;
 
 public class ArtistaLoginDto {
     private String email;

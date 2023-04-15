@@ -1,4 +1,4 @@
-package vibrato.vibrato.configuration.security;
+package vibrato.vibrato.api.configuration.security;
 
 import jakarta.security.auth.message.AuthException;
 import jakarta.security.auth.message.config.AuthConfigProvider;

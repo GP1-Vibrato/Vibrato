@@ -1,4 +1,4 @@
-package vibrato.vibrato.configuration.security;
+package vibrato.vibrato.api.configuration.security;
 
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;

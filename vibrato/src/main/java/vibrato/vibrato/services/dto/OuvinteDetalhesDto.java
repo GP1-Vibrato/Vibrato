@@ -1,8 +1,8 @@
-package vibrato.vibrato.services.autenticacao.dto;
+package vibrato.vibrato.services.dto;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import vibrato.vibrato.entidades.Ouvinte;
+import vibrato.vibrato.dominio.entidades.Ouvinte;
 
 import java.util.Collection;
 

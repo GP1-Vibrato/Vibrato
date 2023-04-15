@@ -1,4 +1,4 @@
-package vibrato.vibrato.configuration.security;
+package vibrato.vibrato.api.configuration.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -17,8 +17,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
-import vibrato.vibrato.configuration.security.jwt.GerenciadorTokenJwt;
-import vibrato.vibrato.services.autenticacao.ArtistaAutenticacaoService;
+import vibrato.vibrato.api.configuration.security.jwt.GerenciadorTokenJwt;
+import vibrato.vibrato.services.autenticacao.OuvinteAutenticacaoService;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -26,15 +26,15 @@ import java.util.Collections;
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-public class ArtistaSecurityConfiguracao {
+public class OuvinteSecurityConfiguracao {
 
-    private static final String ORIGENS_PERMITIDAS = "*";
-
-    @Autowired
-    private ArtistaAutenticacaoService autenticacaoService;
+    private static final  String ORIGENS_PERMITIDAS = "*";
 
     @Autowired
-    private AutenticacaoEntryPoint autenticacaoJwtEntryPoint;
+    private OuvinteAutenticacaoService ouvinteAutenticacaoService;
+
+    @Autowired
+    private AutenticacaoEntryPoint autenticacaoEntryPoint;
 
     private static final AntPathRequestMatcher[] URLS_PERMITIDAS = {
             new AntPathRequestMatcher("/swagger-resources"),
@@ -53,57 +53,56 @@ public class ArtistaSecurityConfiguracao {
     };
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.headers()
-                .frameOptions().disable()
-                .and()
-                .cors()
-                .configurationSource(request -> buildCorsConfiguration())
-                .and()
-                .csrf()
-                .disable()
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(URLS_PERMITIDAS)
-                        .permitAll()
-                        .anyRequest()
-                        .authenticated()
-                )
-                .exceptionHandling()
-                .authenticationEntryPoint(autenticacaoJwtEntryPoint)
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    public SecurityFilterChain ouvinteFilterChain(HttpSecurity http) throws Exception{
+    http.headers()
+            .frameOptions().disable()
+            .and()
+            .cors()
+            .configurationSource(request -> buildCorsConfiguration())
+            .and()
+            .csrf()
+            .disable()
+            .authorizeHttpRequests(authorize -> authorize
+                    .requestMatchers(URLS_PERMITIDAS)
+                    .permitAll()
+                    .anyRequest()
+                    .authenticated()
+            )
+            .exceptionHandling()
+            .authenticationEntryPoint(autenticacaoEntryPoint)
+            .and()
+            .sessionManagement()
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        http.addFilterBefore(jwtAuthenticationFilterBean(), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(ouvinteJwtAuthenticationFilterBean(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
 
     @Bean
-    public AuthenticationManager authManager(HttpSecurity http) throws Exception {
+    public AuthenticationManager ouvinteAuthManager(HttpSecurity http) throws Exception {
         AuthenticationManagerBuilder authenticationManagerBuilder =
                 http.getSharedObject(AuthenticationManagerBuilder.class);
-        authenticationManagerBuilder.authenticationProvider(new ArtistaAutenticacaoProvider(autenticacaoService, passwordEncoder()));
+        authenticationManagerBuilder.authenticationProvider(new OuvinteAutenticacaoProvider(ouvinteAutenticacaoService, ouvintePasswordEncoder()));
         return authenticationManagerBuilder.build();
     }
-
     @Bean
-    public AutenticacaoEntryPoint jwtAuthenticationEntryPointBean() {
+    public AutenticacaoEntryPoint ouvinteJwtAuthenticationEntryPointBean() {
         return new AutenticacaoEntryPoint();
     }
 
     @Bean
-    public ArtistaAutenticacaoFilter jwtAuthenticationFilterBean() {
-        return new ArtistaAutenticacaoFilter(autenticacaoService, jwtAuthenticationUtilBean());
+    public OuvinteAutenticacaoFilter ouvinteJwtAuthenticationFilterBean() {
+        return new OuvinteAutenticacaoFilter(ouvinteAutenticacaoService, ouvinteJwtAuthenticationUtilBean());
     }
 
     @Bean
-    public GerenciadorTokenJwt jwtAuthenticationUtilBean() {
+    public GerenciadorTokenJwt ouvinteJwtAuthenticationUtilBean() {
         return new GerenciadorTokenJwt();
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    public PasswordEncoder ouvintePasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
 

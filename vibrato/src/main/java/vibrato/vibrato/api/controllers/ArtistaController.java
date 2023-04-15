@@ -1,12 +1,12 @@
-package vibrato.vibrato.controllers;
+package vibrato.vibrato.api.controllers;
 
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import vibrato.vibrato.entidades.Artista;
+import vibrato.vibrato.dominio.entidades.Artista;
 import vibrato.vibrato.services.ArtistaService;
-import vibrato.vibrato.services.autenticacao.dto.ArtistaLoginDto;
-import vibrato.vibrato.services.autenticacao.dto.ArtistaTokenDto;
+import vibrato.vibrato.services.dto.ArtistaLoginDto;
+import vibrato.vibrato.services.dto.ArtistaTokenDto;
 
 import java.util.List;
 

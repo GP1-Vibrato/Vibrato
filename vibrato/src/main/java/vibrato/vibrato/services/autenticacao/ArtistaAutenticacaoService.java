@@ -4,13 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import vibrato.vibrato.entidades.Artista;
-import vibrato.vibrato.entidades.repositories.ArtistaRepository;
-import vibrato.vibrato.services.autenticacao.dto.ArtistaDetalhesDto;
-import vibrato.vibrato.services.autenticacao.dto.ArtistaTokenDto;
+import org.springframework.stereotype.Component;
+import vibrato.vibrato.dominio.entidades.Artista;
+import vibrato.vibrato.dominio.entidades.repositories.ArtistaRepository;
+import vibrato.vibrato.services.dto.ArtistaDetalhesDto;
+import vibrato.vibrato.services.dto.ArtistaTokenDto;
 
 import java.util.Optional;
-
+@Component
 public class ArtistaAutenticacaoService  implements UserDetailsService {
     @Autowired
     private ArtistaRepository artistaRepository;

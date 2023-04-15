@@ -1,6 +1,6 @@
-package vibrato.vibrato.services.autenticacao.dto;
+package vibrato.vibrato.services.dto;
 
-public class OuvinteTokenDto {
+public class ArtistaTokenDto {
     private Long userId;
     private String nome;
     private String email;

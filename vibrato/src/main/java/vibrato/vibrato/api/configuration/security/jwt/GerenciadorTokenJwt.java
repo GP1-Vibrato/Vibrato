@@ -1,4 +1,4 @@
-package vibrato.vibrato.configuration.security.jwt;
+package vibrato.vibrato.api.configuration.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

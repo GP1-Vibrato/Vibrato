@@ -4,13 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import vibrato.vibrato.entidades.Artista;
-import vibrato.vibrato.entidades.Ouvinte;
-import vibrato.vibrato.entidades.repositories.ArtistaRepository;
-import vibrato.vibrato.entidades.repositories.OuvinteRepository;
-import vibrato.vibrato.services.autenticacao.dto.ArtistaTokenDto;
-import vibrato.vibrato.services.autenticacao.dto.OuvinteDetalhesDto;
-import vibrato.vibrato.services.autenticacao.dto.OuvinteTokenDto;
+import vibrato.vibrato.dominio.entidades.Ouvinte;
+import vibrato.vibrato.dominio.entidades.repositories.OuvinteRepository;
+import vibrato.vibrato.services.dto.OuvinteDetalhesDto;
+import vibrato.vibrato.services.dto.OuvinteTokenDto;
 
 import java.util.Optional;
 

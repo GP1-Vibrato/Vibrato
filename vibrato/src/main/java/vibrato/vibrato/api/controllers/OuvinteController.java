@@ -1,11 +1,11 @@
-package vibrato.vibrato.controllers;
+package vibrato.vibrato.api.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import vibrato.vibrato.entidades.Ouvinte;
+import vibrato.vibrato.dominio.entidades.Ouvinte;
 import vibrato.vibrato.services.OuvinteService;
-import vibrato.vibrato.services.autenticacao.dto.OuvinteLoginDto;
-import vibrato.vibrato.services.autenticacao.dto.OuvinteTokenDto;
+import vibrato.vibrato.services.dto.OuvinteLoginDto;
+import vibrato.vibrato.services.dto.OuvinteTokenDto;
 
 import java.util.List;
 

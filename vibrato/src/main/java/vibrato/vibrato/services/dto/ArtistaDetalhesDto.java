@@ -1,9 +1,8 @@
-package vibrato.vibrato.services.autenticacao.dto;
+package vibrato.vibrato.services.dto;
 
-import jakarta.validation.constraints.Email;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import vibrato.vibrato.entidades.Artista;
+import vibrato.vibrato.dominio.entidades.Artista;
 
 import java.util.Collection;
 public class ArtistaDetalhesDto implements UserDetails {

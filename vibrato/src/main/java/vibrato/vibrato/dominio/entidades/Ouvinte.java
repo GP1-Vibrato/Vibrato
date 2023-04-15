@@ -1,4 +1,4 @@
-package vibrato.vibrato.entidades;
+package vibrato.vibrato.dominio.entidades;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
