@@ -1,4 +1,4 @@
-package vibrato.vibrato.services;
+package vibrato.vibrato.api.configuration.security.services;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +12,9 @@ import org.springframework.web.server.ResponseStatusException;
 import vibrato.vibrato.api.configuration.security.jwt.GerenciadorTokenJwt;
 import vibrato.vibrato.dominio.entidades.Artista;
 import vibrato.vibrato.dominio.entidades.repositories.ArtistaRepository;
-import vibrato.vibrato.services.autenticacao.ArtistaAutenticacaoService;
-import vibrato.vibrato.services.dto.ArtistaLoginDto;
-import vibrato.vibrato.services.dto.ArtistaTokenDto;
+import vibrato.vibrato.api.configuration.security.services.autenticacao.ArtistaAutenticacaoService;
+import vibrato.vibrato.api.configuration.security.services.dto.ArtistaLoginDto;
+import vibrato.vibrato.api.configuration.security.services.dto.ArtistaTokenDto;
 
 import java.util.List;
 

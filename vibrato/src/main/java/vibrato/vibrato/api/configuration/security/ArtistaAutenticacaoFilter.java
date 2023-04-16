@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 import vibrato.vibrato.api.configuration.security.jwt.GerenciadorTokenJwt;
-import vibrato.vibrato.services.autenticacao.ArtistaAutenticacaoService;
+import vibrato.vibrato.api.configuration.security.services.autenticacao.ArtistaAutenticacaoService;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;

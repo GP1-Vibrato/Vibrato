@@ -4,9 +4,9 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vibrato.vibrato.dominio.entidades.Artista;
-import vibrato.vibrato.services.ArtistaService;
-import vibrato.vibrato.services.dto.ArtistaLoginDto;
-import vibrato.vibrato.services.dto.ArtistaTokenDto;
+import vibrato.vibrato.api.configuration.security.services.ArtistaService;
+import vibrato.vibrato.api.configuration.security.services.dto.ArtistaLoginDto;
+import vibrato.vibrato.api.configuration.security.services.dto.ArtistaTokenDto;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package vibrato.vibrato.services;
+package vibrato.vibrato.api.configuration.security.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -9,11 +9,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import vibrato.vibrato.api.configuration.security.jwt.GerenciadorTokenJwt;
+import vibrato.vibrato.api.configuration.security.services.dto.OuvinteLoginDto;
 import vibrato.vibrato.dominio.entidades.Ouvinte;
 import vibrato.vibrato.dominio.entidades.repositories.OuvinteRepository;
-import vibrato.vibrato.services.autenticacao.OuvinteAutenticacaoService;
-import vibrato.vibrato.services.dto.OuvinteLoginDto;
-import vibrato.vibrato.services.dto.OuvinteTokenDto;
+import vibrato.vibrato.api.configuration.security.services.autenticacao.OuvinteAutenticacaoService;
+import vibrato.vibrato.api.configuration.security.services.dto.OuvinteTokenDto;
 
 import java.util.List;
 

@@ -7,8 +7,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import vibrato.vibrato.services.autenticacao.ArtistaAutenticacaoService;
-import vibrato.vibrato.services.autenticacao.OuvinteAutenticacaoService;
+import vibrato.vibrato.api.configuration.security.services.autenticacao.OuvinteAutenticacaoService;
 
 public class OuvinteAutenticacaoProvider implements AuthenticationProvider {
     private final OuvinteAutenticacaoService ouvinteAutenticacaoService;

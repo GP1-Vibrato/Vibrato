@@ -1,22 +1,21 @@
-package vibrato.vibrato.services.dto;
+package vibrato.vibrato.api.configuration.security.services.dto;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import vibrato.vibrato.dominio.entidades.Ouvinte;
+import vibrato.vibrato.dominio.entidades.Artista;
 
 import java.util.Collection;
-
-public class OuvinteDetalhesDto implements UserDetails{
+public class ArtistaDetalhesDto implements UserDetails {
     private final String email;
     private final String nome;
     private final String senha;
 
-
-    public OuvinteDetalhesDto(Ouvinte ouvinte) {
-        this.email = ouvinte.getEmail();
-        this.nome = ouvinte.getNome();
-        this.senha = ouvinte.getSenha();
+    public ArtistaDetalhesDto(Artista artista) {
+        this.email = artista.getEmail();
+        this.senha = artista.getSenha();
+        this.nome = artista.getNome();
     }
+
 
     @Override
     public String getUsername() {
@@ -48,4 +47,6 @@ public class OuvinteDetalhesDto implements UserDetails{
     public boolean isEnabled(){
         return true;
     }
+
+
 }

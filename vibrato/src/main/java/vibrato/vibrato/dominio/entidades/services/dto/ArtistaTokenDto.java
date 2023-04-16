@@ -1,4 +1,4 @@
-package vibrato.vibrato.services.dto;
+package vibrato.vibrato.api.configuration.security.services.dto;
 
 public class ArtistaTokenDto {
     private Long userId;

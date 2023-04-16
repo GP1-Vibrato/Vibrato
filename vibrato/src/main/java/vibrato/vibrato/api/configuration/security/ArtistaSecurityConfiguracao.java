@@ -3,7 +3,6 @@ package vibrato.vibrato.api.configuration.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,7 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import vibrato.vibrato.api.configuration.security.jwt.GerenciadorTokenJwt;
-import vibrato.vibrato.services.autenticacao.ArtistaAutenticacaoService;
+import vibrato.vibrato.api.configuration.security.services.autenticacao.ArtistaAutenticacaoService;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,7 +30,7 @@ public class ArtistaSecurityConfiguracao {
 
     private static final String ORIGENS_PERMITIDAS = "*";
 
-@Autowired
+    @Autowired
     private ArtistaAutenticacaoService artistaAutenticacaoService;
 
     @Autowired
@@ -87,7 +86,6 @@ public class ArtistaSecurityConfiguracao {
         authenticationManagerBuilder.authenticationProvider(new ArtistaAutenticacaoProvider(artistaAutenticacaoService, passwordEncoder()));
         return authenticationManagerBuilder.build();
     }
-
     @Bean
     public AutenticacaoEntryPoint jwtAuthenticationEntryPointBean() {
         return new AutenticacaoEntryPoint();

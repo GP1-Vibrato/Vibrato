@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 import vibrato.vibrato.api.configuration.security.jwt.GerenciadorTokenJwt;
-import vibrato.vibrato.services.autenticacao.OuvinteAutenticacaoService;
+import vibrato.vibrato.api.configuration.security.services.autenticacao.OuvinteAutenticacaoService;
 
 import java.io.IOException;
 import java.util.Objects;

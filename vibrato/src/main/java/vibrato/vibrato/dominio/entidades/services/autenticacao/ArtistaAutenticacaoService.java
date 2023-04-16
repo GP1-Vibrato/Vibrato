@@ -1,14 +1,14 @@
-package vibrato.vibrato.services.autenticacao;
+package vibrato.vibrato.api.configuration.security.services.autenticacao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+import vibrato.vibrato.api.configuration.security.services.dto.ArtistaDetalhesDto;
+import vibrato.vibrato.api.configuration.security.services.dto.ArtistaTokenDto;
 import vibrato.vibrato.dominio.entidades.Artista;
 import vibrato.vibrato.dominio.entidades.repositories.ArtistaRepository;
-import vibrato.vibrato.services.dto.ArtistaDetalhesDto;
-import vibrato.vibrato.services.dto.ArtistaTokenDto;
 
 import java.util.Optional;
 @Component

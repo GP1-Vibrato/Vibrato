@@ -1,6 +1,6 @@
-package vibrato.vibrato.services.dto;
+package vibrato.vibrato.api.configuration.security.services.dto;
 
-public class OuvinteLoginDto {
+public class ArtistaLoginDto {
     private String email;
     private String senha;
 
@@ -19,4 +19,5 @@ public class OuvinteLoginDto {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
 }

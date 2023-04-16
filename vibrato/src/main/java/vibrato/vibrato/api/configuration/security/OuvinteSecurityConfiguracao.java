@@ -3,6 +3,7 @@ package vibrato.vibrato.api.configuration.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,7 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import vibrato.vibrato.api.configuration.security.jwt.GerenciadorTokenJwt;
-import vibrato.vibrato.services.autenticacao.OuvinteAutenticacaoService;
+import vibrato.vibrato.api.configuration.security.services.autenticacao.OuvinteAutenticacaoService;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -86,6 +87,7 @@ public class OuvinteSecurityConfiguracao {
         authenticationManagerBuilder.authenticationProvider(new OuvinteAutenticacaoProvider(ouvinteAutenticacaoService, ouvintePasswordEncoder()));
         return authenticationManagerBuilder.build();
     }
+    @Primary
     @Bean
     public AutenticacaoEntryPoint ouvinteJwtAuthenticationEntryPointBean() {
         return new AutenticacaoEntryPoint();
